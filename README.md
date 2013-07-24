@@ -58,7 +58,7 @@ To install it, execute the following commands:
     git clone https://github.com/XavierBerger/pcd8544.git
     cd pcd8544
     ./setup.py clean build 
-    sudo ./setup.py install```
+    sudo ./setup.py install
 
 
 ## Wiring the LCD to the Raspberry Pi

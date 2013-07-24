@@ -1,11 +1,9 @@
 #pcd8544 Python library for Raspberry Pi
 
 
-This repository contains a python library to drive PCD8544 LCD (Nokia 5110)
+**This repository contains a python library to drive PCD8544 LCD (Nokia 5110)**
 
-PCD8544 LCD screen is a small cheap screen originally used into Nikia 3110/5110 handset. This screen is still sold nowaday and can be easily purchased online.
-
-It fits very well with Raspberry Pi world and open the the UI possibilities.
+PCD8544 LCD screen is a small cheap screen originally used into Nokia 3110/5110 handset. This screen is still sold nowaday and can be easily purchased online. It fits very well with Raspberry Pi world and open the the UI possibilities.
 
 ![pcd8544](https://raw.github.com/XavierBerger/pcd8544/master/doc/PCD8544.png)
 
@@ -13,7 +11,7 @@ In this readme, you will find instruction explaining how to install and use this
 
 ## Installing the dependencies
 
-First, let's install wiringpi2 from drogon.net
+First, install wiringpi2 from drogon.net
 
     git clone git://git.drogon.net/wiringPi
     cd wiringPi

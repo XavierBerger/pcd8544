@@ -11,7 +11,7 @@ In this readme, you will find instruction explaining how to install and use this
 
 ## Installing the dependencies
 
-First, install wiringpi2 from drogon.net
+First, install *wiringpi2* from drogon.net
 
     git clone git://git.drogon.net/wiringPi
     cd wiringPi
@@ -70,12 +70,12 @@ Note: Check carefully the pin order of your LCD screen, it may be different.
 
 ## Examples
 
- * alphabet.py 
- * bmp_image.py  
- * customChar.py  
- * dimmer.py  
- * imageDrawing.py  
- * pi_logo.py 
+ * alphabet.py : Display alphabet
+ * bmp_image.py : Diaplay raspi.bmp image 
+ * customChar.py : Display custom character
+ * dimmer.py : Change led and increase then decrease light 
+ * imageDrawing.py : Draw a custom image (elipsis) and custom text using ttf font
+ * pi_logo.py : Display Raspberry Pi logo from raw data
 
 ## Special thanks and references
 

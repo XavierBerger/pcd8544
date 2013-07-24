@@ -13,50 +13,52 @@ In this readme, you will find instruction explaining how to install and use this
 
 First, let's install wiringpi2 from drogon.net
 
-```git clone git://git.drogon.net/wiringPi
-cd wiringPi
-./build```
+    git clone git://git.drogon.net/wiringPi
+    cd wiringPi
+    ./build
 
 Once `wiringpi` is installed, it is possible to test it with the following command:
-```gpio readall
- +-----+-------+------+----+-Rev2-----+----+------+-------+-----+
- | wPi |  Name | Mode | Val| Physical |Val | Mode | Name  | wPi |
- +-----+-------+------+----+----++----+----+------+-------+-----+
- |     |  3.3v |      |    |  1 || 2  |    |      | 5v    |     |
- |   8 |   SDA |   IN | Lo |  3 || 4  |    |      | 5V    |     |
- |   9 |   SCL |   IN | Lo |  5 || 6  |    |      | 0v    |     |
- |   7 | GPIO7 |   IN | Lo |  7 || 8  | Lo | ALT0 | TxD   | 15  |
- |     |    0v |      |    |  9 || 10 | Lo | ALT0 | RxD   | 16  |
- |   0 | GPIO0 |   IN | Hi | 11 || 12 | Hi | OUT  | GPIO1 | 1   |
- |   2 | GPIO2 |   IN | Lo | 13 || 14 |    |      | 0v    |     |
- |   3 | GPIO3 |   IN | Hi | 15 || 16 | Lo | OUT  | GPIO4 | 4   |
- |     |  3.3v |      |    | 17 || 18 | Lo | OUT  | GPIO5 | 5   |
- |  12 |  MOSI | ALT0 | Hi | 19 || 20 |    |      | 0v    |     |
- |  13 |  MISO | ALT0 | Hi | 21 || 22 | Hi | IN   | GPIO6 | 6   |
- |  14 |  SCLK | ALT0 | Hi | 23 || 24 | Lo | ALT0 | CE1   | 10  |
- |     |    0v |      |    | 25 || 26 | Lo | ALT0 | CE1   | 11  |
- +-----+-------+------+----+----++----+----+------+-------+-----+```
+
+    gpio readall
+     +-----+-------+------+----+-Rev2-----+----+------+-------+-----+
+     | wPi |  Name | Mode | Val| Physical |Val | Mode | Name  | wPi |
+     +-----+-------+------+----+----++----+----+------+-------+-----+
+     |     |  3.3v |      |    |  1 || 2  |    |      | 5v    |     |
+     |   8 |   SDA |   IN | Lo |  3 || 4  |    |      | 5V    |     |
+     |   9 |   SCL |   IN | Lo |  5 || 6  |    |      | 0v    |     |
+     |   7 | GPIO7 |   IN | Lo |  7 || 8  | Lo | ALT0 | TxD   | 15  |
+     |     |    0v |      |    |  9 || 10 | Lo | ALT0 | RxD   | 16  |
+     |   0 | GPIO0 |   IN | Hi | 11 || 12 | Hi | OUT  | GPIO1 | 1   |
+     |   2 | GPIO2 |   IN | Lo | 13 || 14 |    |      | 0v    |     |
+     |   3 | GPIO3 |   IN | Hi | 15 || 16 | Lo | OUT  | GPIO4 | 4   |
+     |     |  3.3v |      |    | 17 || 18 | Lo | OUT  | GPIO5 | 5   |
+     |  12 |  MOSI | ALT0 | Hi | 19 || 20 |    |      | 0v    |     |
+     |  13 |  MISO | ALT0 | Hi | 21 || 22 | Hi | IN   | GPIO6 | 6   |
+     |  14 |  SCLK | ALT0 | Hi | 23 || 24 | Lo | ALT0 | CE1   | 10  |
+     |     |    0v |      |    | 25 || 26 | Lo | ALT0 | CE1   | 11  |
+     +-----+-------+------+----+----++----+----+------+-------+-----+
 Now, install the python binding of wiringpi:
 
-```sudo apt-get install python-dev python-imaging python-imaging-tk python-pip
-sudo pip install wiringpi```
+    sudo apt-get install python-dev python-imaging python-imaging-tk python-pip
+    sudo pip install wiringpi
 
 The program we will use require spidev to be activated. The kernel module should then be activated.
 To do so, comment the line `blacklist spi-bcm2708` by adding a heading `#` in the file `/etc/modprobe.d/raspi-blacklist.conf` then reboot the Raspberry Pi to activate this module.
 
 Finally install spidev python library:
 
-```sudo pip install spidev```
+    sudo pip install spidev
 
 The prerequisite are now installed. In next chapter we will see how to install the python library in charge of driving the PCD8544 LCD and how to use it.
 
 ## Building and installing the library
 
 To install it, execute the following commands:
-```git clone https://github.com/XavierBerger/pcd8544.git
-cd pcd8544
-./setup.py clean build 
-sudo ./setup.py install```
+
+    git clone https://github.com/XavierBerger/pcd8544.git
+    cd pcd8544
+    ./setup.py clean build 
+    sudo ./setup.py install```
 
 
 ## Wiring the LCD to the Raspberry Pi
@@ -64,16 +66,16 @@ sudo ./setup.py install```
 The following schema represent how to connect the LCD screen to the Raspberry Pi
 Note: Check carefully the pin order of your LCD screen, it may be different.
 
-![Wiring Schematic](https://raw.github.com/XavierBerger/pcd8544/master/doc/PCD8544wiring.png)
+![Wiring Schematic](https://raw.github.com/XavierBerger/pcd8544/master/doc/PCB8544wiring.png)
 
 ## Examples
 
-*alphabet.py 
-*bmp_image.py  
-*customChar.py  
-*dimmer.py  
-*imageDrawing.py  
-*pi_logo.py 
+ * alphabet.py 
+ * bmp_image.py  
+ * customChar.py  
+ * dimmer.py  
+ * imageDrawing.py  
+ * pi_logo.py 
 
 ## Special thanks and references
 

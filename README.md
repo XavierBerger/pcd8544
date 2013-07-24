@@ -7,6 +7,8 @@ PCD8544 LCD screen is a small cheap screen originally used into Nikia 3110/5110 
 
 It fits very well with Raspberry Pi world and open the the UI possibilities.
 
+![pcd8544](https://raw.github.com/XavierBerger/pcd8544/master/doc/PCD8544.png)
+
 In this readme, you will find instruction explaining how to install and use this library.
 
 ## Installing the dependencies
@@ -66,7 +68,7 @@ To install it, execute the following commands:
 The following schema represent how to connect the LCD screen to the Raspberry Pi
 Note: Check carefully the pin order of your LCD screen, it may be different.
 
-![Wiring Schematic](https://raw.github.com/XavierBerger/pcd8544/master/doc/PCB8544wiring.png)
+![Wiring Schematic](https://raw.github.com/XavierBerger/pcd8544/master/doc/PCD8544wiring.png)
 
 ## Examples
 
@@ -80,7 +82,6 @@ Note: Check carefully the pin order of your LCD screen, it may be different.
 ## Special thanks and references
 
 Special thanks goes to Raspberry Pi community:
-http://www.raspberrypi.org/phpBB3/viewtopic.php?p=301522#p301522
-https://github.com/rm-hull/pcd8544 
-
+ * http://www.raspberrypi.org/phpBB3/viewtopic.php?p=301522#p301522
+ * https://github.com/rm-hull/pcd8544 
 

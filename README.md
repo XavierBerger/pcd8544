@@ -76,6 +76,9 @@ Note: Check carefully the pin order of your LCD screen, it may be different.
  * dimmer.py : Change led and increase then decrease light 
  * imageDrawing.py : Draw a custom image (elipsis) and custom text using ttf font
  * pi_logo.py : Display Raspberry Pi logo from raw data
+ 
+![pi_logo](https://raw.github.com/XavierBerger/pcd8544/master/doc/pi_logo.png)
+
 
 ## Special thanks and references
 

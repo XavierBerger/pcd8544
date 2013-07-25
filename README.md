@@ -69,7 +69,7 @@ The following schema represent how to connect the LCD screen to the Raspberry Pi
 
 ## Examples
 
-The library comes with [examples](https://github.com/XavierBerger/pcd8544/tree/master/examples) showing deffirent feature and library usage.
+The library comes with [examples](https://github.com/XavierBerger/pcd8544/tree/master/examples) showing different feature and library usage.
 
 [![pi_logo](https://raw.github.com/XavierBerger/pcd8544/master/doc/pi_logo.png)](https://github.com/XavierBerger/pcd8544/tree/master/examples)
 

@@ -20,8 +20,6 @@ try:
   lcd.cls()
   lcd.backlight(ON)
   ## Generate an image with PIL and put on the display
-  ## First time through is slow as the fonts are not cached
-  ##
   # load an available True Type font
   font = ImageFont.truetype("/usr/share/fonts/truetype/freefont/FreeSansBold.ttf", 14)
 

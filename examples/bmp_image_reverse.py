@@ -14,7 +14,7 @@ try:
   lcd.init()
   lcd.cls()
   lcd.backlight(ON)
-  lcd.load_bitmap("raspi.bmp", False)
+  lcd.load_bitmap("raspi.bmp", True)
   time.sleep(10)
 except KeyboardInterrupt:
   pass 

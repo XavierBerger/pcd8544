@@ -1,10 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import time
-from PIL import Image,ImageDraw,ImageFont
-import pcd8544.lcd as lcd
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
 import pcd8544.lcd as lcd
 import time
 import os

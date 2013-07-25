@@ -14,10 +14,14 @@ try:
   lcd.init()
   lcd.cls()
   lcd.backlight(ON)
-  lcd.load_bitmap("raspi.bmp", False)
-  time.sleep(10)
+  lcd.pi_custom()
+  lcd.text("\x7f \x7f \x7f \x7f \x7f \x7f \x7f ")
+  lcd.text("    Hello     ")
+  lcd.text(" Raspberry Pi")
+  time.sleep(10);
 except KeyboardInterrupt:
-  pass 
+  pass
 finally:
   lcd.cls;
   lcd.backlight(OFF);
+

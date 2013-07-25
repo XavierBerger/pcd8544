@@ -14,10 +14,14 @@ try:
   lcd.init()
   lcd.cls()
   lcd.backlight(ON)
-  lcd.load_bitmap("raspi.bmp", False)
-  time.sleep(10)
+  lcd.centre_word(0,"Raspberry Pi")
+  for loop in range(600 * 4):
+     lcd.centre_word(2,time.strftime("%d %b %Y", time.localtime()))
+     lcd.centre_word(3,time.strftime("%H:%M:%S", time.localtime()))
+     time.sleep(0.25)
 except KeyboardInterrupt:
-  pass 
+  pass
 finally:
   lcd.cls;
   lcd.backlight(OFF);
+

@@ -1,10 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import time
-from PIL import Image,ImageDraw,ImageFont
-import pcd8544.lcd as lcd
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
 import pcd8544.lcd as lcd
 import time
 import os
@@ -21,10 +16,10 @@ try:
   if ( lcd.LED != 1 ):
       sys.exit('LED pin should be GPIO1 (12)')
   # Backlight PWM testing -- off -> 25% -> off
-  for i in range(0,255):
+  for i in range(0,255,2):
       lcd.led(i)
       time.sleep(0.025)
-  for i in range(255,0,-1):
+  for i in range(255,0,-2):
       lcd.led(i)
       time.sleep(0.025)
 except KeyboardInterrupt:

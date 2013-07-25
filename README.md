@@ -72,7 +72,7 @@ Note: Check carefully the pin order of your LCD screen, it may be different.
 
 ![pi_logo](https://raw.github.com/XavierBerger/pcd8544/master/doc/pi_logo.png)
 
-See https://github.com/XavierBerger/pcd8544/tree/master/examples for details
+See https://github.com/XavierBerger/pcd8544/tree/master/examples for more example and see the possibilities offert by this library.
 
 ## Special thanks and references
 

@@ -64,9 +64,12 @@ To install it, execute the following commands:
 ## Wiring the LCD to the Raspberry Pi
 
 The following schema represent how to connect the LCD screen to the Raspberry Pi
-Note: Check carefully the pin order of your LCD screen, it may be different.
+
+**Note: Check carefully the pin order of your LCD screen, it may be different.**
 
 ![Wiring Schematic](https://raw.github.com/XavierBerger/pcd8544/master/doc/PCD8544wiring.png)
+
+*Schema made with Fritring (http://fritzing.org)*
 
 ## Examples
 

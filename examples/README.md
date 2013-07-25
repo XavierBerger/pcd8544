@@ -34,7 +34,7 @@ Display a custom char constructed inside the script
 ![custom_char](https://raw.github.com/XavierBerger/pcd8544/master/doc/example-custom_char.png)
 
 ##custom_char_pi.py
-Diaply Pi custom char provided by the library
+Diaplay Pi custom char provided by the library
 
 ![custom_char_pi](https://raw.github.com/XavierBerger/pcd8544/master/doc/example-custom_char_pi.png)
 
@@ -48,4 +48,4 @@ Draw Raspberry Pi logo from raw data
 
 ![pi_logo](https://raw.github.com/XavierBerger/pcd8544/master/doc/example-pi_logo.png)
 
-*(Example extracted from https://github.com/rm-hull/pcd8544/blob/master/examples/pi_logo.py)*
+*Data of this example has been extracted from https://github.com/rm-hull/pcd8544/blob/master/examples/pi_logo.py*

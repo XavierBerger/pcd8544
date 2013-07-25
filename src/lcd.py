@@ -108,7 +108,7 @@ def led(led_value):
 
 
 def load_bitmap(filename, reverse=False):
-    mask = 0xff if reverse else 0x00
+    mask = 0x00 if reverse else 0xff
     gotoxy(0, 0)
     with open(filename, 'rb') as bitmap_file:
         for x in xrange(6):

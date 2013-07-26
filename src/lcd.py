@@ -67,9 +67,11 @@ def init(dev=(0,0),speed=4000000, brightness=256, contrast=CONTRAST):
     # if LED == 1 set pin mode to PWM else set it to OUT
     if LED == 1:
         wiringpi.pinMode(LED, 2)
+        wiringpi.pwmWrite(LED,0)
     else:
         wiringpi.pinMode(LED, 1)
-
+        wiringpi.digitalWrite(LED, OFF)
+ 
 
 
 def lcd_cmd(value):

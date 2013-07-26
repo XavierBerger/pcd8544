@@ -1,9 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import pcd8544.lcd as lcd
-import time
-import os
-import sys
+import time, os, sys
 
 if not os.geteuid() == 0:
     sys.exit('Script must be run as root')
@@ -22,6 +20,6 @@ try:
 except KeyboardInterrupt:
   pass
 finally:
-  lcd.cls;
-  lcd.backlight(OFF);
+  lcd.cls()
+  lcd.backlight(OFF)
 

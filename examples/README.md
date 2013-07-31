@@ -21,12 +21,17 @@ Clear the screen and turn off the backlight
 ##clock.py
 Display date and time line centered
 
-![composite_image_drawing](https://raw.github.com/XavierBerger/pcd8544/master/doc/example-clock.png)
+![clock](https://raw.github.com/XavierBerger/pcd8544/master/doc/example-clock.png)
 
 ##composite_image_drawing.py
 Draw acomposite image using Python Image Library (PIL) and ttf font
 
 ![composite_image_drawing](https://raw.github.com/XavierBerger/pcd8544/master/doc/example-composite_image_drawing.png)
+
+##contrast.py
+Show contrast change effects
+
+![contrast](https://raw.github.com/XavierBerger/pcd8544/master/doc/example-contrast.png)
 
 ##custom_char.py
 Display a custom char constructed inside the script

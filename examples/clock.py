@@ -12,10 +12,10 @@ try:
   lcd.init()
   lcd.cls()
   lcd.backlight(ON)
-  lcd.center_text(0,"Raspberry Pi")
+  lcd.centre_text(0,"Raspberry Pi")
   while 1:
-     lcd.center_text(2,time.strftime("%d %b %Y", time.localtime()))
-     lcd.center_text(3,time.strftime("%H:%M:%S", time.localtime()))
+     lcd.centre_text(2,time.strftime("%d %b %Y", time.localtime()))
+     lcd.centre_text(3,time.strftime("%H:%M:%S", time.localtime()))
      time.sleep(0.25)
 except KeyboardInterrupt:
   pass

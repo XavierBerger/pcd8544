@@ -121,8 +121,8 @@ def text(string, font=FONT):
         display_char(char, font)
 
 
-def centre_text(r, text):
-    gotorc(r, max(0, (COLUMNS - len(text)) // 2))
+def centre_text(r, word):
+    gotorc(r, max(0, (COLUMNS - len(word)) // 2))
     text(word)
     
 
@@ -135,15 +135,15 @@ def define_custom_char(values):
 
 
 def restore_custom_char():
-    define_custom(ORIGINAL_CUSTOM)
+    define_custom_char(ORIGINAL_CUSTOM)
 
 
 def alt_custom_char():
-    define_custom([0x00, 0x50, 0x3C, 0x52, 0x44])
+    define_custom_char([0x00, 0x50, 0x3C, 0x52, 0x44])
 
 
 def pi_custom_char():
-    define_custom([0x19, 0x25, 0x5A, 0x25, 0x19])
+    define_custom_char([0x19, 0x25, 0x5A, 0x25, 0x19])
 
 
 def display_char(char, font=FONT):

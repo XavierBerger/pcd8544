@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import pcd8544.lcd as lcd
-import timz, os, sys
+import time, os, sys
 
 if not os.geteuid() == 0:
     sys.exit('Script must be run as root')

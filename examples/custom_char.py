@@ -21,7 +21,7 @@ try:
   # . . . X X X X X
   # . . . - - X X -
   # . . . - - - - -
-  lcd.define_custom([0x30,0x2c,0x66,0x6c,0x30])
+  lcd.define_custom_char([0x30,0x2c,0x66,0x6c,0x30])
   lcd.text("\x7f \x7f \x7f \x7f \x7f \x7f \x7f ")
   lcd.text("    Hello     ")
   lcd.text(" Raspberry Pi")

@@ -11,12 +11,15 @@ ON, OFF = [1, 0]
 try:
   lcd.init()
   lcd.cls()
-  lcd.backlight(ON)
-  lcd.pi_custom_char()
-  lcd.text("\x7f \x7f \x7f \x7f \x7f \x7f \x7f ")
-  lcd.text("    Hello     ")
-  lcd.text(" Raspberry Pi")
-  time.sleep(10);
+  lcd.center_text(2,"contrast")
+  for i in range(0xaa,0xff,5):
+      lcd.set_contrast(i)
+      lcd.center_text(3,"%d" % i)
+      time.sleep(1)
+  for i in range(0xff,0xaa,-5):
+      lcd.set_contrast(i)
+      lcd.center_text(3,"%d" % i)
+      time.sleep(1)
 except KeyboardInterrupt:
   pass
 finally:

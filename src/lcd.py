@@ -4,7 +4,6 @@
 # Code picked up Raspberry Pi forums  
 # http://www.raspberrypi.org/phpBB3/viewtopic.php?p=301522#p301522
 #
-
 import time
 import wiringpi
 import spidev
@@ -61,8 +60,7 @@ def init(dev=(0,0),speed=4000000, brightness=256, contrast=CONTRAST):
     time.sleep(0.100)
     wiringpi.digitalWrite(RST, ON)
     # Extended mode, bias, vop, basic mode, non-inverted display.
-    wiringpi.digitalWrite(DC, OFF)
-    spi.writebytes([0x21, 0x14, contrast, 0x20, 0x0c])
+    set_contrast(contrast)
 
     # if LED == 1 set pin mode to PWM else set it to OUT
     if LED == 1:
@@ -82,11 +80,6 @@ def lcd_cmd(value):
 def lcd_data(value):
     wiringpi.digitalWrite(DC, ON)
     spi.writebytes([value])
-
-
-def gotoxy(x, y):
-    wiringpi.digitalWrite(DC, OFF)
-    spi.writebytes([x+128,y+64])
 
 
 def cls():
@@ -109,33 +102,47 @@ def led(led_value):
             wiringpi.digitalWrite(LED, ON)
 
 
-def load_bitmap(filename, reverse=False):
-    mask = 0x00 if reverse else 0xff
-    gotoxy(0, 0)
-    with open(filename, 'rb') as bitmap_file:
-        for x in xrange(6):
-          for y in xrange(84):
-            bitmap_file.seek(0x3e + y * 8 + x)
-            lcd_data(BITREVERSE[ord(bitmap_file.read(1))] ^ mask)
+def set_contrast(contrast):
+    wiringpi.digitalWrite(DC, OFF)
+    spi.writebytes([0x21, 0x14, contrast, 0x20, 0x0c])
 
 
-def show_custom(font=FONT):
+def gotoxy(x, y):
+    wiringpi.digitalWrite(DC, OFF)
+    spi.writebytes([x+128,y+64])
+
+
+def gotorc(r, c):
+    gotoxy(c*6,r)
+
+
+def text(string, font=FONT):
+    for char in string:
+        display_char(char, font)
+
+
+def centre_text(r, text):
+    gotorc(r, max(0, (COLUMNS - len(text)) // 2))
+    text(word)
+    
+
+def show_custom_char(font=FONT):
     display_char('\x7f', font)
 
 
-def define_custom(values):
+def define_custom_char(values):
     FONT['\x7f'] = values
 
 
-def restore_custom():
+def restore_custom_char():
     define_custom(ORIGINAL_CUSTOM)
 
 
-def alt_custom():
+def alt_custom_char():
     define_custom([0x00, 0x50, 0x3C, 0x52, 0x44])
 
 
-def pi_custom():
+def pi_custom_char():
     define_custom([0x19, 0x25, 0x5A, 0x25, 0x19])
 
 
@@ -148,18 +155,14 @@ def display_char(char, font=FONT):
         pass # Ignore undefined characters.
 
 
-def text(string, font=FONT):
-    for char in string:
-        display_char(char, font)
-
-
-def gotorc(r, c):
-    gotoxy(c*6,r)
-
-
-def centre_word(r, word):
-    gotorc(r, max(0, (COLUMNS - len(word)) // 2))
-    text(word)
+def load_bitmap(filename, reverse=False):
+    mask = 0x00 if reverse else 0xff
+    gotoxy(0, 0)
+    with open(filename, 'rb') as bitmap_file:
+        for x in xrange(6):
+          for y in xrange(84):
+            bitmap_file.seek(0x3e + y * 8 + x)
+            lcd_data(BITREVERSE[ord(bitmap_file.read(1))] ^ mask)
 
 
 def show_image(im):

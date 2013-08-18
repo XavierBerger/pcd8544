@@ -38,6 +38,8 @@ Display a custom char constructed inside the script
 
 ![custom_char](https://raw.github.com/XavierBerger/pcd8544/master/doc/example-custom_char.png)
 
+Note: Custom char can be designed thanks to the site http://www.carlos-rodrigues.com/projects/pcd8544/
+
 ##custom_char_pi.py
 Diaplay Pi custom char provided by the library
 

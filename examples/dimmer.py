@@ -14,11 +14,11 @@ try:
   if ( lcd.LED != 1 ):
       sys.exit('LED pin should be GPIO1 (12)')
   # Backlight PWM testing -- off -> 25% -> off
-  for i in range(0,255,2):
-      lcd.led(i)
+  for i in range(0,1023,16):
+      lcd.set_brightness(i)
       time.sleep(0.025)
-  for i in range(255,0,-2):
-      lcd.led(i)
+  for i in range(1023,0,-16):
+      lcd.set_brightness(i)
       time.sleep(0.025)
 except KeyboardInterrupt:
   pass

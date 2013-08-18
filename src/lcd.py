@@ -89,10 +89,10 @@ def cls():
 
 
 def backlight(value):
-    led(256*value)
+    set_brightness(256*value)
 
 
-def led(led_value):
+def set_brightness(led_value):
     if  LED == 1:
         wiringpi.pwmWrite(LED,led_value)
     else:

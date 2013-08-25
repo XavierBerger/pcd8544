@@ -5,7 +5,7 @@
 # http://www.raspberrypi.org/phpBB3/viewtopic.php?p=301522#p301522
 #
 import time
-import wiringpi
+import wiringpi2 as wiringpi
 import spidev
 from PIL import Image,ImageDraw,ImageFont
 from pcd8544.font import FONT

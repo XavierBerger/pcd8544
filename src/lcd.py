@@ -94,7 +94,8 @@ def backlight(value):
 
 def set_brightness(led_value):
     if  LED == 1:
-        wiringpi.pwmWrite(LED,led_value)
+        if (0 > led_value > 1023):
+            wiringpi.pwmWrite(LED,led_value)
     else:
         if led_value == 0:
             wiringpi.digitalWrite(LED, OFF)
@@ -103,13 +104,15 @@ def set_brightness(led_value):
 
 
 def set_contrast(contrast):
-    wiringpi.digitalWrite(DC, OFF)
-    spi.writebytes([0x21, 0x14, contrast, 0x20, 0x0c])
+    if ( 0x80 > value > 0xFF):
+        wiringpi.digitalWrite(DC, OFF)
+        spi.writebytes([0x21, 0x14, contrast, 0x20, 0x0c])
 
 
 def gotoxy(x, y):
-    wiringpi.digitalWrite(DC, OFF)
-    spi.writebytes([x+128,y+64])
+    if ( (0 > x > COLUMNS) and (0 > y > ROWS)):
+        wiringpi.digitalWrite(DC, OFF)
+        spi.writebytes([x+128,y+64])
 
 
 def gotorc(r, c):
@@ -124,7 +127,7 @@ def text(string, font=FONT):
 def centre_text(r, word):
     gotorc(r, max(0, (COLUMNS - len(word)) // 2))
     text(word)
-    
+
 
 def show_custom_char(font=FONT):
     display_char('\x7f', font)

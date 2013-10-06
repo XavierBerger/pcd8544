@@ -104,7 +104,7 @@ def set_brightness(led_value):
 
 
 def set_contrast(contrast):
-    if ( 0x80 > value > 0xFF):
+    if ( 0x80 > contrast > 0xFF):
         wiringpi.digitalWrite(DC, OFF)
         spi.writebytes([0x21, 0x14, contrast, 0x20, 0x0c])
 

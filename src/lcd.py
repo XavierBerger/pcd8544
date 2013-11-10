@@ -94,7 +94,7 @@ def backlight(value):
 
 def set_brightness(led_value):
     if  LED == 1:
-        if (0 > led_value > 1023):
+        if (0 <= led_value < 1023):
             wiringpi.pwmWrite(LED,led_value)
     else:
         if led_value == 0:
@@ -104,13 +104,13 @@ def set_brightness(led_value):
 
 
 def set_contrast(contrast):
-    if ( 0x80 > contrast > 0xFF):
+    if ( 0x80 <= contrast < 0xFF):
         wiringpi.digitalWrite(DC, OFF)
         spi.writebytes([0x21, 0x14, contrast, 0x20, 0x0c])
 
 
 def gotoxy(x, y):
-    if ( (0 > x > COLUMNS) and (0 > y > ROWS)):
+    if ( (0 <= x < COLUMNS) and (0 <= y < ROWS)):
         wiringpi.digitalWrite(DC, OFF)
         spi.writebytes([x+128,y+64])
 
